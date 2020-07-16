@@ -1,6 +1,6 @@
-let table = 15.678; //price
-let chair = 123.965; //price
-let bed = 90.2345; //price
+const table = 15.678; //price
+const chair = 123.965; //price
+const bed = 90.2345; //price
 
 let maxPrice = Math.max(table, chair, bed);
 console.log('Максимальна ціна: ' + maxPrice);
@@ -18,13 +18,15 @@ let integerBedValue = Math.floor(bed);
 let totalIntegerAmount = integerTableValue + integerChairValue + integerBedValue;
 console.log('Загальна сума округлена до меншого: ' + totalIntegerAmount);
 
-let roundedToHundred = Math.round(totalIntegerAmount / 100) * 100;
+let roundedToHundred = Math.ceil(totalIntegerAmount / 100) * 100;
 console.log('Округлено до сотні: ' + roundedToHundred);
 
 let isOdd = totalIntegerAmount % 2 === 0 ? "Odd" : "Even";
 console.log('Парне чи не парне: ' + isOdd);
 
-let changeSum = 500 - totalAmount;
+const amountFromClient = 500; 
+
+let changeSum = amountFromClient - totalAmount;
 console.log('Решта з 500: ' + changeSum);
 
 let averageValue = totalAmount / 3;
