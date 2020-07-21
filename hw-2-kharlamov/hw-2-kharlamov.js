@@ -1,18 +1,17 @@
 
-let firstNum = Number(+prompt('Введіть число #1'));
-
-let total = null;
-
+let firstNum = +prompt('Введіть число #1');
 //integer check for number 1
 while(!Number.isInteger(firstNum) || firstNum === '' || isNaN(firstNum) ){
   firstNum = +prompt('Введіть ціле число!');
 }
 
-let secondNum = Number(+prompt('Введіть число #2', firstNum + 1));
+let secondNum = +prompt('Введіть число #2', firstNum + 1);
 //integer check for number 2
 while(!Number.isInteger(secondNum) || firstNum >= secondNum || secondNum === '' || isNaN(secondNum)  ){
   secondNum = +prompt('Введіть ціле число, яке є більшим від числа #1!')
 }
+
+let total = null;
 
 let skipIfEven = confirm('Пропустити парні числа?');
 //even numbers skip if true
@@ -25,13 +24,11 @@ while(firstNum <= secondNum){
     }
   }
   total = total + firstNum;
-  firstNum++
+  firstNum++ 
 }
 
 console.log(total);
 document.writeln(`
-  Перше число: ${firstNum};
-  Друге число: ${secondNum}
-  Чи пропускати парні числа: ${skipIfEven}
+  Чи пропускати парні числа: ${skipIfEven} <br>
   Результат: ${total}
 `);

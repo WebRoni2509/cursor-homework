@@ -1,19 +1,19 @@
-const table = 15.678; //price
-const chair = 123.965; //price
-const bed = 90.2345; //price
+const TABLE = 15.678; //price
+const CHAIR = 123.965; //price
+const BED = 90.2345; //price
 
-let maxPrice = Math.max(table, chair, bed);
+let maxPrice = Math.max(TABLE, CHAIR, BED);
 console.log('Максимальна ціна: ' + maxPrice);
 
-let minPrice = Math.min(table, chair, bed);
+let minPrice = Math.min(TABLE, CHAIR, BED);
 console.log('Мінімальна ціна: ' + minPrice);
 
-let totalAmount = table + chair + bed;
+let totalAmount = TABLE + CHAIR + BED;
 console.log('Загальна вартість:' + totalAmount);
 
-let integerTableValue = Math.floor(table);
-let integerChairValue = Math.floor(chair);
-let integerBedValue = Math.floor(bed);
+let integerTableValue = Math.floor(TABLE);
+let integerChairValue = Math.floor(CHAIR);
+let integerBedValue = Math.floor(BED);
 
 let totalIntegerAmount = integerTableValue + integerChairValue + integerBedValue;
 console.log('Загальна сума округлена до меншого: ' + totalIntegerAmount);
