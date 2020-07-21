@@ -1,13 +1,13 @@
 
 let firstNum = +prompt('Введіть число #1');
 //integer check for number 1
-while(firstNum == '' || !Number.isInteger(firstNum) || isNaN(firstNum) ){
+while(!Number.isInteger(firstNum) || firstNum == '' || isNaN(firstNum) ){
   firstNum = +prompt('Введіть ціле число!');
 }
 
 let secondNum = +prompt('Введіть число #2', firstNum + 1);
 //integer check for number 2
-while(secondNum == '' || !Number.isInteger(secondNum) || firstNum >= secondNum || isNaN(secondNum)  ){
+while(!Number.isInteger(secondNum) || firstNum >= secondNum || secondNum == '' || isNaN(secondNum)  ){
   secondNum = +prompt('Введіть ціле число, яке є більшим від числа #1!')
 }
 
