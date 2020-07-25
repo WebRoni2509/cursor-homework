@@ -1,5 +1,5 @@
 
-// Get Max Digit function
+// 1
 const getMaxDigit = (digit) => {
   digit = (digit + '').split('').sort();
   return `Найбільша цифра з числа ${(digit).join('')} = ${digit[digit.length - 1]}`  
@@ -23,6 +23,17 @@ const capitalizeWord = (name) => {
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
 console.log(capitalizeWord('roman'));
+
+//4
+const countTax = (salaryAmount) => {
+  let taxAmount = 18;
+  let militaryTax = 1.5;
+  if(!Number.isInteger(salaryAmount)){
+    console.log('Введіть число')
+  }
+  return salaryAmount - (salaryAmount / 100 * (taxAmount + militaryTax)).toFixed(2);
+}
+console.log(countTax(1000));
 
 //5
 const getRandomNubmer = (fromNumber, toNubmer) => {
