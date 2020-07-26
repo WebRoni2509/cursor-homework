@@ -43,6 +43,8 @@ document.writeln(`Випадкове число від 1 до 10: ${getRandomNub
 //6
 const countLetters = (letterToFind, wordToCheck) => {
   let lettersCounter = 0;
+  letterToFind = letterToFind.toLowerCase();
+  wordToCheck = wordToCheck.toLowerCase();
   for(let i = 0; i < wordToCheck.length; i++){
     if(letterToFind === wordToCheck[i])
       lettersCounter++
