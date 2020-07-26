@@ -8,12 +8,15 @@ document.writeln(getMaxDigit(765567221833))
 
 // 2
 const degreeOfNum = (num, deg ) => {
-    let res = 1;
-    for(let i = 0; i < deg; i++)
-    {
-        res = res * num;
-    }
+  let res = 1;
+  for(let i = 0; i < deg; i++){
+      res = res * num;
+  }
+  if(num === 0 && deg !== 0){
+    return 0;
+  } else{
     return res;
+  }
 }
 document.writeln(`Ступінь числа: ${degreeOfNum(2, 20)} <br>`); 
 
