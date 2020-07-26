@@ -53,7 +53,6 @@ document.writeln(`Кількість повторень букви: ${countLette
 
 //9 
 const deleteLetters = (letterToDelete, wordToCheck) => {
-
   for(let i = 0; i < wordToCheck.length; i++){
     wordToCheck = wordToCheck.replace(letterToDelete, '')
   }
@@ -61,9 +60,9 @@ const deleteLetters = (letterToDelete, wordToCheck) => {
 }
 document.writeln(`Речення з видаленими буквами: ${deleteLetters('l','hello world')} <br>`);
 
-//11
+//10
 const isPalindrome = (stringToCheck) => {
-  stringToCheck = stringToCheck.trim();
+  stringToCheck = stringToCheck.replace(/\s+/g, '').toLowerCase();
   let stringToCheckReverse = stringToCheck.split('').reverse().join('');
   
   if(stringToCheckReverse == stringToCheck){
@@ -73,7 +72,7 @@ const isPalindrome = (stringToCheck) => {
   	return 'It is not palyndrome'
   }
 }
-document.writeln(isPalindrome('    s11s'));
+document.writeln(isPalindrome('Я несу гусеня'));
 
 
 
