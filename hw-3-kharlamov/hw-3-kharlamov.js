@@ -2,10 +2,9 @@
 // 1
 const getMaxDigit = (digit) => {
   digit = (digit + '').split('').sort();
-  return `Найбільша цифра з числа ${(digit).join('')} = ${digit[digit.length - 1]}`  
+  return `Найбільша цифра з числа ${(digit).join('')} = ${digit[digit.length - 1]} <br>`  
 }
-
-document.writeln(`Функція №1 - отримати найбільшу цифру з числа ${getMaxDigit(765567221833)}`)
+document.writeln(getMaxDigit(765567221833))
 
 // 2
 const degreeOfNum = (num, deg ) => {
@@ -16,13 +15,13 @@ const degreeOfNum = (num, deg ) => {
     }
     return res;
 }
-console.log(degreeOfNum(2, 2)); 
+document.writeln(`Ступінь числа: ${degreeOfNum(2, 20)} <br>`); 
 
 // 3
 const capitalizeWord = (name) => {
   return name.charAt(0).toUpperCase() + name.slice(1);
 }
-console.log(capitalizeWord('roman'));
+document.writeln(`Функція "Capitalize": ${capitalizeWord('roman')} <br>`);
 
 //4
 const countTax = (salaryAmount) => {
@@ -33,13 +32,13 @@ const countTax = (salaryAmount) => {
   }
   return salaryAmount - (salaryAmount / 100 * (taxAmount + militaryTax)).toFixed(2);
 }
-console.log(countTax(1000));
+document.writeln(`Заробітня плата з вирахуваним податком становить: ${countTax(1000)} <br>`);
 
 //5
 const getRandomNubmer = (fromNumber, toNubmer) => {
   return Math.floor(Math.random() * (toNubmer - fromNumber + 1) + fromNumber);
 }
-console.log(getRandomNubmer(1, 10));
+document.writeln(`Випадкове число від 1 до 10: ${getRandomNubmer(1, 10)} <br>`);
 
 //6
 const countLetters = (letterToFind, wordToCheck) => {
@@ -50,7 +49,7 @@ const countLetters = (letterToFind, wordToCheck) => {
   }
   return lettersCounter
 }
-console.log(countLetters('s','aasasdsad'));
+document.writeln(`Кількість повторень букви: ${countLetters('s','aasasdsad')} <br>`);
 
 //9 
 const deleteLetters = (letterToDelete, wordToCheck) => {
@@ -60,10 +59,19 @@ const deleteLetters = (letterToDelete, wordToCheck) => {
   }
   return wordToCheck;
 }
-console.log(deleteLetters('l','hello world'));
+document.writeln(`Речення з видаленими буквами: ${deleteLetters('l','hello world')} <br>`);
 
-
-
+//11
+const isPalindrome = (stringToCheck) => {
+	let stringToCheckReverse = stringToCheck.split('').reverse().join('');
+  if(stringToCheckReverse == stringToCheck){
+  	return 'Is palyndrome'
+  }
+  else{
+  	return 'It is not palyndrome'
+  }
+}
+document.writeln(isPalindrome('s11s'));
 
 
 
