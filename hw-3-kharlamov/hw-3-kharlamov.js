@@ -63,7 +63,9 @@ document.writeln(`Речення з видаленими буквами: ${delet
 
 //11
 const isPalindrome = (stringToCheck) => {
-	let stringToCheckReverse = stringToCheck.split('').reverse().join('');
+  stringToCheck = stringToCheck.trim();
+  let stringToCheckReverse = stringToCheck.split('').reverse().join('');
+  
   if(stringToCheckReverse == stringToCheck){
   	return 'Is palyndrome'
   }
@@ -71,7 +73,7 @@ const isPalindrome = (stringToCheck) => {
   	return 'It is not palyndrome'
   }
 }
-document.writeln(isPalindrome('s11s'));
+document.writeln(isPalindrome('    s11s'));
 
 
 
