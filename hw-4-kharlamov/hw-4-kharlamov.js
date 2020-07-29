@@ -1,6 +1,6 @@
 
 const students = ['Олександр', 'Ігор', 'Олена', 'Іра', 'Олексій', 'Світлана'];
-const themes = ['Диференційне рівняння', 'Теорія автоматів', 'Алкоритми і структури даних'];
+const themes = ['Диференційне рівняння', 'Теорія автоматів', 'Алгоритми і структури даних'];
 const marks = [4, 5, 5, 3, 4, 5];
 
 const createPairs = () => {
@@ -15,7 +15,7 @@ const createPairs = () => {
     }
   }
   for(let i = 0; i < male.length; i++){
-    pairs.push([male[i] + ' та ' + female[i]])
+    pairs.push([' ' + male[i] + 'та ' + female[i]])
   }
  return pairs;
 }
@@ -24,12 +24,30 @@ const projectForStudents = () => {
   let studentsProject = [];
   let pairs = createPairs();
   for(let i = 0; i < themes.length; i++){
-    studentsProject.push([pairs[i] + ', '+ themes[i]]);
+    studentsProject.push([pairs[i] + ', '+ themes[i] + '']);
   }
-  console.log(studentsProject)
   return studentsProject;
 }
 
-document.writeln(projectForStudents()); //Project for pair of students
-document.writeln(createPairs()); //Pairs of students
+const setMarks = () => {
+  let studentsWithMarks = [];
+  for(let i = 0; i < students.length; i++){
+    studentsWithMarks.push([' ' +[students[i], ' ' +marks[i]]]);
+  }
+  return studentsWithMarks;
+}
 
+const setRandomMarks = () => {
+  let studentsWithRandomMarks = [];
+  let pairs = createPairs();
+  let pairsWithProject = projectForStudents();
+  for(let i = 0; i < pairsWithProject.length; i++){
+    studentsWithRandomMarks.push([pairs[i] + ', ' + themes[i] + ', ' + Math.floor(Math.random() * 5 )])
+  }
+  return studentsWithRandomMarks;
+}
+
+document.writeln(`${createPairs()} <br>`); //Pairs of students
+document.writeln(`${projectForStudents()} <br>`); //Project for pair of students
+document.writeln(`${setMarks()} <br>`); //Set marks for students
+document.writeln(`${setRandomMarks()} <br>`);
