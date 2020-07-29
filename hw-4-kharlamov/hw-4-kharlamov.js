@@ -15,7 +15,7 @@ const createPairs = () => {
     }
   }
   for(let i = 0; i < male.length; i++){
-    pairs.push([' ' + male[i] + 'та ' + female[i]])
+    pairs.push([' ' + male[i] + ' та ' + female[i]])
   }
  return pairs;
 }
@@ -32,7 +32,7 @@ const projectForStudents = () => {
 const setMarks = () => {
   let studentsWithMarks = [];
   for(let i = 0; i < students.length; i++){
-    studentsWithMarks.push([' ' +[students[i], ' ' +marks[i]]]);
+    studentsWithMarks.push([' ' +[students[i], ' ' + marks[i]]]);
   }
   return studentsWithMarks;
 }
@@ -42,7 +42,7 @@ const setRandomMarks = () => {
   let pairs = createPairs();
   let pairsWithProject = projectForStudents();
   for(let i = 0; i < pairsWithProject.length; i++){
-    studentsWithRandomMarks.push([pairs[i] + ', ' + themes[i] + ', ' + Math.floor(Math.random() * 5 )])
+    studentsWithRandomMarks.push([pairs[i] + ', ' + themes[i] + ', ' + Math.floor(Math.random() * 5 + 1 )])
   }
   return studentsWithRandomMarks;
 }
