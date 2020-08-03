@@ -32,7 +32,7 @@ const projectForStudents = () => {
 const setMarks = () => {
   let studentsWithMarks = [];
   for(let i = 0; i < students.length; i++){
-    studentsWithMarks.push([' ' +[students[i], ' ' + marks[i]]]);
+    studentsWithMarks.push([' ' + [students[i], ' ' + marks[i]]]);
   }
   return studentsWithMarks;
 }
