@@ -40,5 +40,5 @@ document.writeln(`Середнє арифметичне: <strong>${getAverageVal
 document.writeln(`Непарні числа: <strong>${filterEvenNumbers(...numbersToUse)}</strong> <br>`)//function #5 output
 document.writeln(`Числа які більші ніж 0: <strong>${countPositiveNumbers(...numbersToUse)}</strong> <br>`)//function #6 output
 document.writeln(`Числа які діляться на 5: <strong>${getDivideByFive(...numbersToUse)}</strong> <br>`)//function #7 output
-document.writeln(`Слово розбите на умовні склади з трьох букв: <strong>${divideByThree('абракадабра сім салябім')}</strong> <br>`); //function #9 output
+document.writeln(`Слово розбите на умовні склади з трьох букв: <strong>${divideByThree('Реструктуризація Синхрофазотрон')}</strong> <br>`); //function #9 output
 
