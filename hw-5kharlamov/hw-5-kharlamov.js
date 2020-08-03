@@ -11,10 +11,16 @@ const getRandomArray = (length, minNum, maxNum) => {
 }
 
 //function #5
-const filterEvenNumbers = (...numbersToUse) => numbersToUse.filter(number => number % 2 === 0).join(', ');
+const filterEvenNumbers = (...numbersToUse) => numbersToUse.filter(number => !(number % 2 === 0)).join(', ');
+
+//function #6
+const countPositiveNumbers = (...numbersToUse) => numbersToUse.filter(number => number > 0).length;
+
+//function #7
+const getDivideByFive = (...numbersToUse) => numbersToUse.filter(number => number % 5 === 0).join(', ');
 
 //function #9
-const getDivideByThree = (wordToDivide) => {
+const divideByThree = (wordToDivide) => {
   let wordArr = [];
   for(let i = 0; i < wordToDivide.length; i = i + 3){
     
@@ -23,10 +29,10 @@ const getDivideByThree = (wordToDivide) => {
   return wordArr.join(', ');
 }
 
-
-
-
+ 
 document.writeln(`Масив випадкових чисел: <strong>${getRandomArray(15, 1, 111)}</strong> <br>`); //function #1 output
-document.writeln(`Парні числа: <strong>${filterEvenNumbers(...numbersToUse)}</strong> <br>`)//function #5 output
-document.writeln(`Слово розбите на умовні склади з трьох букв: <strong>${getDivideByThree('абракадабра')}</strong> <br>`); //function #9 output
+document.writeln(`Непарні числа: <strong>${filterEvenNumbers(...numbersToUse)}</strong> <br>`)//function #5 output
+document.writeln(`Числа які більші ніж 0: <strong>${countPositiveNumbers(...numbersToUse)}</strong> <br>`)//function #6 output
+document.writeln(`Числа які діляться на 5: <strong>${getDivideByFive(...numbersToUse)}</strong> <br>`)//function #7 output
+document.writeln(`Слово розбите на умовні склади з трьох букв: <strong>${divideByThree('абракадабра')}</strong> <br>`); //function #9 output
 
