@@ -30,16 +30,15 @@ const divideByThree = (wordToDivide) => {
   let wordArr = [];
   for(let i = 0; i < wordToDivide.length; i = i + 3){
     
-    wordArr.push(wordToDivide.slice(i, i + 3))
+    wordArr.push(wordToDivide.replace(/\s+/g, '').toLowerCase().slice(i, i + 3))
   }
   return wordArr;
 }
 
- 
 document.writeln(`Масив випадкових чисел: <strong>${getRandomArray(15, 1, 111)}</strong> <br>`); //function #1 output
-document.writeln(`Середнє арифметичне: <strong>${getAverageValue(...numbersToUse)}</strong> <br>`)
+document.writeln(`Середнє арифметичне: <strong>${getAverageValue(...numbersToUse)}</strong> <br>`)//function #4 output
 document.writeln(`Непарні числа: <strong>${filterEvenNumbers(...numbersToUse)}</strong> <br>`)//function #5 output
 document.writeln(`Числа які більші ніж 0: <strong>${countPositiveNumbers(...numbersToUse)}</strong> <br>`)//function #6 output
 document.writeln(`Числа які діляться на 5: <strong>${getDivideByFive(...numbersToUse)}</strong> <br>`)//function #7 output
-document.writeln(`Слово розбите на умовні склади з трьох букв: <strong>${divideByThree('абракадабра')}</strong> <br>`); //function #9 output
+document.writeln(`Слово розбите на умовні склади з трьох букв: <strong>${divideByThree('абракадабра сім салябім')}</strong> <br>`); //function #9 output
 
