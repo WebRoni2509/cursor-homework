@@ -10,6 +10,12 @@ const getRandomArray = (length, minNum, maxNum) => {
   return arr.join(', ');
 }
 
+//function #3
+const getAverageValue = (...numbersToUse) => {
+    let averageValue = numbersToUse.reduce((num, sum) => num + sum, 0) / numbersToUse.length;
+    return averageValue.toFixed(1);
+}
+
 //function #5
 const filterEvenNumbers = (...numbersToUse) => numbersToUse.filter(number => !(number % 2 === 0)).join(', ');
 
@@ -31,6 +37,7 @@ const divideByThree = (wordToDivide) => {
 
  
 document.writeln(`Масив випадкових чисел: <strong>${getRandomArray(15, 1, 111)}</strong> <br>`); //function #1 output
+document.writeln(`Середнє арифметичне: <strong>${getAverageValue(...numbersToUse)}</strong> <br>`)
 document.writeln(`Непарні числа: <strong>${filterEvenNumbers(...numbersToUse)}</strong> <br>`)//function #5 output
 document.writeln(`Числа які більші ніж 0: <strong>${countPositiveNumbers(...numbersToUse)}</strong> <br>`)//function #6 output
 document.writeln(`Числа які діляться на 5: <strong>${getDivideByFive(...numbersToUse)}</strong> <br>`)//function #7 output
