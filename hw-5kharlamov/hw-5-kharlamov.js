@@ -26,7 +26,7 @@ const divideByThree = (wordToDivide) => {
     
     wordArr.push(wordToDivide.slice(i, i + 3))
   }
-  return wordArr.join(', ');
+  return wordArr;
 }
 
  
