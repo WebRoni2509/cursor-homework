@@ -1,4 +1,3 @@
-
 const students = [{
   name: "Tanya",
   course: 3,
@@ -24,3 +23,15 @@ const students = [{
     cosmology: [5, 5, 5, 5]
   }
 }];
+
+//function #1
+
+const getSubjects = (obj) => {
+  let subjects = Object.keys(obj.subjects);
+  let subjectsList = subjects.map(function(el){
+    el.charAt(0).toUpperCase() + el.slice(1);
+    return el;
+  })
+  return subjectsList;
+}
+console.log(getSubjects(students[0]));
