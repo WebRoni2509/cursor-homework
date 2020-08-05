@@ -29,9 +29,25 @@ const students = [{
 const getSubjects = (obj) => {
   let subjects = Object.keys(obj.subjects);
   let subjectsList = subjects.map(function(el){
-    el.charAt(0).toUpperCase() + el.slice(1);
-    return el.replace('_', ' ');
+    let capitalize = el.charAt(0).toUpperCase() + el.slice(1);
+    return capitalize.replace('_', ' ');
   })
-  return subjectsList;
+  return subjectsList.join(', ');
 }
-document.writeln(`Список предметів для студента ${students[0].name}: <strong>${getSubjects(students[0])}</strong> <br>`);
+
+//function #2
+
+const getAverageMark = (obj) => {
+  let marks = Object.values(obj.subjects).join().split(',');
+  return marks.join(', ')
+}
+
+console.log(getAverageMark(students[1]))
+
+document.writeln(`Список предметів для студента ${students[0].name}: <strong>${getSubjects(students[0])}</strong> <br>`); //function #1 output
+document.writeln(`Список предметів для студента ${students[1].name}: <strong>${getSubjects(students[1])}</strong> <br>`); //function #1 output
+document.writeln(`Список предметів для студента ${students[2].name}: <strong>${getSubjects(students[2])}</strong> <br><br>`); //function #1 output
+
+document.writeln(`Середній бал студента ${students[0].name}: <strong>${getAverageMark(students[0])}</strong> <br>`); //function #2 output
+document.writeln(`Середній бал студента ${students[1].name}: <strong>${getAverageMark(students[1])}</strong> <br>`); //function #2 output
+document.writeln(`Середній бал студента ${students[2].name}: <strong>${getAverageMark(students[2])}</strong> <br>`); //function #2 output
