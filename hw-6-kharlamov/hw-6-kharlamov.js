@@ -30,8 +30,8 @@ const getSubjects = (obj) => {
   let subjects = Object.keys(obj.subjects);
   let subjectsList = subjects.map(function(el){
     el.charAt(0).toUpperCase() + el.slice(1);
-    return el;
+    return el.replace('_', ' ');
   })
   return subjectsList;
 }
-console.log(getSubjects(students[0]));
+document.writeln(`Список предметів для студента ${students[0].name}: <strong>${getSubjects(students[0])}</strong> <br>`);
