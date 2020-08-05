@@ -1,3 +1,5 @@
+
+//data to use
 const students = [{
   name: "Tanya",
   course: 3,
@@ -43,7 +45,21 @@ const getAverageMark = (obj) => {
 
 //function #3
 const getStudentInfo = (obj) => {
+	let studentInfo = {
+  	studentCourse: obj.course,
+    studentName: obj.name,
+    averageMark: getAverageMark(obj)
+  }
+  return studentInfo;
+}
 
+//function #4
+const getStudentsNames = (obj) => {
+  let studentsNamesList = obj.map(function(el){
+  	let names = el.name;
+    return names;
+  })
+  return studentsNamesList.sort();
 }
 
 document.writeln(`Список предметів для студента ${students[0].name}: <strong>${getSubjects(students[0])}</strong> <br>`); //function #1 output
@@ -52,4 +68,13 @@ document.writeln(`Список предметів для студента ${stud
 
 document.writeln(`Середній бал студента ${students[0].name}: <strong>${getAverageMark(students[0])}</strong> <br>`); //function #2 output
 document.writeln(`Середній бал студента ${students[1].name}: <strong>${getAverageMark(students[1])}</strong> <br>`); //function #2 output
-document.writeln(`Середній бал студента ${students[2].name}: <strong>${getAverageMark(students[2])}</strong> <br>`); //function #2 output
+document.writeln(`Середній бал студента ${students[2].name}: <strong>${getAverageMark(students[2])}</strong> <br><br>`); //function #2 output
+
+document.writeln(`Результат функції №3 в консолі. <br><br>`); //function #3 output info
+console.log(getStudentInfo(students[0])); //function #3 output
+console.log(getStudentInfo(students[1])); //function #3 output
+console.log(getStudentInfo(students[2])); //function #3 output
+
+document.writeln(`Імена студентів за алфавітом <strong>${getStudentsNames(students)}</strong> <br><br>`); //function #4 output
+
+
