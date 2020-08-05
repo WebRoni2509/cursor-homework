@@ -25,7 +25,6 @@ const students = [{
 }];
 
 //function #1
-
 const getSubjects = (obj) => {
   let subjects = Object.keys(obj.subjects);
   let subjectsList = subjects.map(function(el){
@@ -36,13 +35,16 @@ const getSubjects = (obj) => {
 }
 
 //function #2
-
 const getAverageMark = (obj) => {
   let marks = Object.values(obj.subjects).join().split(',');
-  return marks.join(', ')
+  let averageMark = (marks.reduce((num, sum) => +num + +sum, 0) / marks.length).toFixed(2);
+  return averageMark;
 }
 
-console.log(getAverageMark(students[1]))
+//function #3
+const getStudentInfo = (obj) => {
+
+}
 
 document.writeln(`Список предметів для студента ${students[0].name}: <strong>${getSubjects(students[0])}</strong> <br>`); //function #1 output
 document.writeln(`Список предметів для студента ${students[1].name}: <strong>${getSubjects(students[1])}</strong> <br>`); //function #1 output
