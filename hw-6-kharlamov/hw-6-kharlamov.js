@@ -79,10 +79,19 @@ const getBestStudent = (obj) => {
 
 //function #6
 const calculateWordLetters = (str) => {
-  
-}
+  let wordObj = {};
+  for(item of str){
+    if (wordObj[item]){
+      wordObj[item]++;
+    }
+    else{
+      wordObj[item] = 1;
+      }
+    }
+  return wordObj;
+};
 
-
+///////// OUTPUT //////////
 document.writeln(`Список предметів для студента ${students[0].name}: <strong>${getSubjects(students[0])}</strong> <br>`); //function #1 output
 document.writeln(`Список предметів для студента ${students[1].name}: <strong>${getSubjects(students[1])}</strong> <br>`); //function #1 output
 document.writeln(`Список предметів для студента ${students[2].name}: <strong>${getSubjects(students[2])}</strong> <br><br>`); //function #1 output
@@ -99,4 +108,8 @@ console.log(getStudentInfo(students[2])); //function #3 output
 document.writeln(`Імена студентів за алфавітом <strong>${getStudentsNames(students)}</strong> <br><br>`); //function #4 output
 
 document.writeln(`Найвищий бал у студента: <strong>${getBestStudent(students)}</strong> <br><br>`); //function #5 output
+
+document.writeln(`Результат функції №6 в консолі. <br><br>`); //function #6 output info
+console.log(calculateWordLetters('phenomenon')); //function #6 output
+
 
