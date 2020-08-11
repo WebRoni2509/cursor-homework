@@ -23,7 +23,10 @@ function getTotalTaxes(country) {
 
 //function #4
 function getMySalary(country) {
-  
+  const salary = +Math.floor(Math.random() * (2000 - 1500) + 1500);
+  const taxes = +Math.round(this.tax * salary);
+  const profit = +Math.round(salary - taxes);
+  return {salary, taxes, profit}
 }
 
 document.writeln(`Сума податків для сплати: <strong>${getMyTaxes.call(ukraine, 25000)}</strong><br><br>`); //function #1 output
@@ -36,4 +39,7 @@ document.writeln(`Сільки всього податків платять IT-�
 document.writeln(`Сільки всього податків платять IT-спеціалісти в Латвії: <strong>${getTotalTaxes.call(latvia)}</strong><br>`); //function #3 output
 document.writeln(`Сільки всього податків платять IT-спеціалісти в Литві: <strong>${getTotalTaxes.call(litva)}</strong><br>`); //function #3 output
 
+const ukraineInterval = setInterval( function(){
+  console.log(getMySalary.call(ukraine));
+},10000)
 
