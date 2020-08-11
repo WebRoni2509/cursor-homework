@@ -15,9 +15,25 @@ function getMiddleTaxes(country) {
   return middleTax;
 }
 
+//function #3
+function getTotalTaxes(country) {
+  const taxesTotalAmount = this.tax * this.middleSalary * this.vacancies;
+  return taxesTotalAmount;
+}
+
+//function #4
+function getMySalary(country) {
+  
+}
 
 document.writeln(`Сума податків для сплати: <strong>${getMyTaxes.call(ukraine, 25000)}</strong><br><br>`); //function #1 output
+
 document.writeln(`Середній податок ІТ - спеціаліста в Україні: <strong>${getMiddleTaxes.call(ukraine)}</strong><br>`); //function #2 output
 document.writeln(`Середній податок ІТ - спеціаліста в Латвії: <strong>${getMiddleTaxes.call(latvia)}</strong><br>`); //function #2 output
-document.writeln(`Середній податок ІТ - спеціаліста в Литві: <strong>${getMiddleTaxes.call(litva)}</strong><br>`); //function #2 output
+document.writeln(`Середній податок ІТ - спеціаліста в Литві: <strong>${getMiddleTaxes.call(litva)}</strong><br><br>`); //function #2 output
+
+document.writeln(`Сільки всього податків платять IT-спеціалісти в Україні: <strong>${getTotalTaxes.call(ukraine)}</strong><br>`); //function #3 output
+document.writeln(`Сільки всього податків платять IT-спеціалісти в Латвії: <strong>${getTotalTaxes.call(latvia)}</strong><br>`); //function #3 output
+document.writeln(`Сільки всього податків платять IT-спеціалісти в Литві: <strong>${getTotalTaxes.call(litva)}</strong><br>`); //function #3 output
+
 
