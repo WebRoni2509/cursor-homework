@@ -36,8 +36,7 @@ class Student{
     }
     else{
       return null;
-    }
-    
+    }   
   }
   dismissStudent(){
     this.isStudent = false;
@@ -46,10 +45,6 @@ class Student{
     this.isStudent = true;
   }
 };
-
-
-
-
 
 const student = new Student('1', 'Вищої Школи Психотерапії м.Одеса', 'Остап Бендер');
 document.writeln(`#1 <strong>${student.getStudentInfo()}</strong><br><br>`);
@@ -70,7 +65,7 @@ class BudgetStudent extends Student {
     } ,5000);
   }
   getScolarship(){
-    if(this.getAverageMark() > 4){
+    if(this.getAverageMark() > 4 || this.isStudent !== false){
       console.log('Ви отримали 1400 грн. стипендії');
     }
     else{
@@ -81,3 +76,5 @@ class BudgetStudent extends Student {
 
 const newStudent = new BudgetStudent('2', 'Тернопільської ветеринарної академії', 'Доктор Хлус');
 document.writeln(`#7 <strong>${newStudent.getStudentInfo()}</strong><br><br>`);
+// newStudent.dismissStudent();
+// newStudent.recoverStudent();
