@@ -49,7 +49,7 @@ class Student{
 const student = new Student('1', 'Вищої Школи Психотерапії м.Одеса', 'Остап Бендер');
 document.writeln(`#1 <strong>${student.getStudentInfo()}</strong><br><br>`);
 document.writeln(`#2 Оцінки студента: <strong>${student.marks}</strong><br><br>`);
-student.studentMarks = 3;
+student._studentMarks = 3;
 document.writeln(`#3 Усі оцінки студента: <strong>${student.marks}</strong><br><br>`);
 document.writeln(`#4 Середній бал студента: <strong>${student.getAverageMark()}</strong><br><br>`)
 student.dismissStudent();
