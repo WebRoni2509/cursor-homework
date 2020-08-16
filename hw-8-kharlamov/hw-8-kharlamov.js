@@ -8,10 +8,10 @@ class Student{
     this.isStudent = true;
   }
   getStudentInfo(){
-    const studentInfo = 'Студент ' + this.course + 'го курсу ' + this.university + ', ' + this.fullName;
+    const studentInfo = `Студент ${this.course} го курсу ${this.university}, ${this.fullName}`;
     return studentInfo;
   }
-  get studentMarks(){
+  get _studentMarks(){
     if(this.isStudent){
       return this.marks;
     }
@@ -19,7 +19,7 @@ class Student{
       return null;
     }
   }
-  set studentMarks(mark){
+  set _studentMarks(mark){
     if(this.isStudent){
       const newMarks = this.marks.push(mark);
       return newMarks;
@@ -53,16 +53,16 @@ student.studentMarks = 3;
 document.writeln(`#3 Усі оцінки студента: <strong>${student.marks}</strong><br><br>`);
 document.writeln(`#4 Середній бал студента: <strong>${student.getAverageMark()}</strong><br><br>`)
 student.dismissStudent();
-document.writeln(`#5 Усі оцінки студента після виключення: <strong>${student.studentMarks}</strong><br><br>`);
+document.writeln(`#5 Усі оцінки студента після виключення: <strong>${student._studentMarks}</strong><br><br>`);
 student.recoverStudent()
-document.writeln(`#6 Усі оцінки студента після поновлення: <strong>${student.studentMarks}</strong><br><br>`);
+document.writeln(`#6 Усі оцінки студента після поновлення: <strong>${student._studentMarks}</strong><br><br>`);
 
 class BudgetStudent extends Student {
   constructor(course, university, fullName){
     super(course, university, fullName);
     setInterval(() => {
       this.getScolarship();
-    } ,5000);
+    } ,30000);
   }
   getScolarship(){
     if(this.getAverageMark() > 4 || this.isStudent !== false){
