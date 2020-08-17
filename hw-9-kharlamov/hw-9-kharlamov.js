@@ -1,7 +1,7 @@
 
-const styles = {
-  width: '50px',
-  height: '50px',
+const colorBlockStyles = {
+  width: 50,
+  height: 50,
   display: 'inline-block'
 }
 
@@ -14,11 +14,13 @@ const getRandomColor = () => {
 
 const createBlock = () => {
 	const block = document.createElement("div");
+	const parentContainerWidth = colorBlockStyles.width * 5
+	blocksContainer.style.width = parentContainerWidth + 'px';
 	blocksContainer.appendChild(block);
 	block.classList.add('block-item');
-	block.style.width = styles.width;
-	block.style.height = styles.height;
-	block.style.display = styles.display;
+	block.style.width = colorBlockStyles.width + 'px';
+	block.style.height = colorBlockStyles.height + 'px';
+	block.style.display = colorBlockStyles.display;
 	block.style.background = getRandomColor();
 }
 
