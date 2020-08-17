@@ -39,4 +39,8 @@ const generateBlocksInterval = () => {
 }
 
 generateBlocks();
-runIntervalBtn.addEventListener('click', generateBlocksInterval);
+
+runIntervalBtn.addEventListener('click', function () {
+	generateBlocksInterval();
+	this.classList.add('freeze');
+})
