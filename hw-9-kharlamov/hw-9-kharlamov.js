@@ -30,9 +30,13 @@ const generateBlocks = () => {
 
 const generateBlocksInterval = () => {
 	const allBlocks = document.querySelectorAll('.block-item');
-	allBlocks.forEach(function (element) {
-		element.style.backgroundColor = getRandomColor();
-	})
+	setInterval(() => {
+		allBlocks.forEach(function (element) {
+			element.style.backgroundColor = getRandomColor();
+		});
+	}, 1000)
+	
 }
+
 generateBlocks();
-runIntervalBtn.addEventListener('click', setInterval(generateBlocksInterval, 1000));
+runIntervalBtn.addEventListener('click', generateBlocksInterval);
