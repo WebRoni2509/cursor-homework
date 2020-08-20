@@ -1,6 +1,10 @@
 
+// let blockWidth = +prompt('введіть ширину');
+// let blockHeight = +prompt('введіть висоту');
+
+
 const colorBlockStyles = {
-  width: 50,
+  width: 100,
   height: 50,
   display: 'inline-block'
 }
@@ -37,7 +41,6 @@ const generateBlocksInterval = () => {
 			element.style.backgroundColor = getRandomColor();
 		});
 	}, 1000)
-	
 }
 
 generateBlocks();
