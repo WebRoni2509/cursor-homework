@@ -4,7 +4,7 @@
 
 
 const colorBlockStyles = {
-  width: 100,
+  width: 50,
   height: 50,
   display: 'inline-block'
 }
