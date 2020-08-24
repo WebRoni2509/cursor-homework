@@ -2,7 +2,6 @@
 // let blockWidth = +prompt('введіть ширину');
 // let blockHeight = +prompt('введіть висоту');
 
-
 const colorBlockStyles = {
   width: 50,
   height: 50,
