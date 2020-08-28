@@ -6,7 +6,17 @@ const getCharachters = (url) => {
     (res) => {
       return res.data.characters
     }
-  )
+  ).then((charactersUrls) => {
+    const updatedCharactersUrls = [];
+    for (let i = 0; i < charactersUrls.length; i++) {
+      updatedCharactersUrls[i] = charactersUrls[i].replace("http://", "https://");
+    }
+    return Promise.all(
+      updatedCharactersUrls.map((el) => {
+            return axios.get(el).then((res) => res.data);
+        })
+    );
+})
 }
 
 console.log(getCharachters())
