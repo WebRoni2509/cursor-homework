@@ -1,12 +1,14 @@
 
 const BASE_URL = `https://swapi.dev/api/`;
-const mainContainer = document.querySelector('.container');
-const showCharactersBtn = document.querySelector('#showCharactersBtn');
-const showPlanetsBtn = document.querySelector('#showPlanetsBtn');
-
+const mainContainer = document.querySelector('.main');
+const showCharactersBtn = document.querySelector('#showCharacters');
+const showPlanetsBtn = document.querySelector('#showPlanets');
+const pagination = document.querySelector('.pagination');
+const next = document.querySelector('#next');
+const prev = document.querySelector('#prev');
 
 //get characters list
-const getCharachters = (url) => {
+const getCharachters = () => {
   return axios.get(`${BASE_URL}films/5/`).then(
     (res) => {
       return res.data.characters
@@ -22,9 +24,8 @@ const getCharachters = (url) => {
 })
 }
 
-console.log(getCharachters())
-
 //get planets list
+let page = 1;
 const planets = (page) => {
   const config = {
     url: `${BASE_URL}planets/`,
@@ -32,43 +33,65 @@ const planets = (page) => {
   }
   return axios(config).then(
     (res) => {
+      console.log(res)
       return res.data.results;
     }
   )
 }
 
-console.log(planets())
-
-
 //render characters list
 const renderCharacters = (characters) => {
   mainContainer.innerHTML = '';
-  characters.map((element) => {
+  return characters.map((element) => {
       const characterItem = document.createElement('div');
-      characterItem.className = 'characterItem';
+      characterItem.className = 'card';
+      characterItem.style.width = '18rem'
       characterItem.innerHTML = `
-        <span>Name: <strong>${element.name}</strong></span>
-        <span>Birhday: <strong>${element.birth_year}</strong></span>
-        <span>Gender: <strong>${element.gender}</strong></span>`;
-        mainContainer.append(characterItem);
+        <div class="card-body">
+          <h5 class="card-title">${element.name}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${element.birth_year}</h6>
+          <p class="card-text">${element.gender}</p>
+        </div>`;
+      mainContainer.append(characterItem);
   });
 }
 
-document.querySelector('#showCharacters').addEventListener('click', () => {
+showCharactersBtn.addEventListener('click', () => {
+  pagination.style.display = 'none'
   getCharachters().then(renderCharacters)
 });
 
 //render planets list
 const renderPlanets = (planets) => {
-  mainContainer.innerHTML = ''
-  planets.forEach(element => {
+  mainContainer.innerHTML = '';
+  return planets.forEach(element => {
     const planet = document.createElement('div');
-    planet.className = 'planetItem';
+    planet.className = 'card';
     planet.innerHTML = `
-      <span>Planet name: <strong>${element.name}</strong></span>
-    `;
+    <div class="card-body">
+      <h5 class="card-title">${element.name}</h5>
+    </div> `;
+    mainContainer.append(planet);
   });
 }
-document.querySelector('#showPlanets').addEventListener('click', () => {
-  planets(1).then(renderPlanets)
+
+showPlanetsBtn.addEventListener('click', () => {
+  pagination.style.display = 'flex'
+  planets().then(renderPlanets)
+});
+
+prev.addEventListener('click', () => {
+  if (page <= 1){
+    return;
+  } else{
+    planets(--page).then(renderPlanets);
+  }
+});
+next.addEventListener('click', () => {
+  if (page >= 6){
+    return;
+  } else{
+    planets(++page).then(renderPlanets);
+  }
+  
 });

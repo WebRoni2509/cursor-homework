@@ -4,32 +4,67 @@
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <title>HW#12 Kharlamov Roman</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <style>
     *{box-sizing: border-box;}
-    body{font-family: 'Roboto';}
-    .characterItem{
-      border: 1px solid #000;
-      margin-bottom: 10px;
+    body{font-family: 'Roboto'; background: #000;}
+    .logo{
+      width: 300px;
+      margin: 30px auto;
+      display: block;
+    }
+    .logo img {max-width: 100%;}
+    .main {
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
     }
-    .characterItem span {
-      padding: 10px;
-    }
-    .container{
+    
+    .toggleContentBtns, .pagination{
       display: flex;
-      flex-direction: column;
-
+      justify-content: center;
+      margin: 50px 0 30px 0
     }
+    .pagination{
+      margin-top: 20px;
+      display: none;
+    }
+    .toggleContentBtns button, .pagination button {
+      margin: 0 10px;
+    }
+    .card{
+      width: 18rem;
+      margin-bottom: 20px;
+      -webkit-box-shadow: 0px 0px 17px 2px rgba(255,170,0,0.7);
+      -moz-box-shadow: 0px 0px 17px 2px rgba(255,170,0,0.7);
+      box-shadow: 0px 0px 17px 2px rgba(255,170,0,0.7);
+    }
+    
+    
   </style>
 </head>
 <body>
-  <!-- <button type="button" id="prev">Prev</button>
-  <button type="button" id="next">Next</button> --> 
-  <button id="showCharacters" type="button">showCharacters</button>
-  <button id="showPlanets" type="button">showCharacters</button>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="">
+  </a>
+  <div class="toggleContentBtns">
+    <button id="showCharacters" class="btn btn-info" type="button">showCharacters</button>
+    <button id="showPlanets"  class="btn btn-info" type="button">showPlanets</button>
+  </div>
+  
+  <ul class="pagination">
+    <li type="button" class="page-item" id="prev">
+      <a class="page-link" href="#">Previous</a>
+    </li>
+    <li type="button" class="page-item" id="next">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  
+  </ul>
 
-  <div class="container"></div>
+  <div class="main"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="main.js"></script>
