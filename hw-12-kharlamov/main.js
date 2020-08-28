@@ -1,23 +1,30 @@
 
 const BASE_URL = `https://swapi.dev/api/`;
 
-const request = (url) => {
-    return fetch(url).then(response => response.json())
+const getCharachters = (url) => {
+  return axios.get(`${BASE_URL}films/5`).then(
+    (res) => {
+      return res.data.characters
+    }
+  )
 }
 
-const getCharachters = (url) => {
-  return request(url)
-    .then((result) => {
-    return result.characters.map(request)
-  }).then((result) => {
-    return Promise.all(result)
-  }).then((result) => {
-    return result.map((element) => {
-      return {
-        name: element.name,
-        birth: element.birth_year,
-        gender: element.gender
-      }
-    })
-  })
+console.log(getCharachters())
+
+function showCharacters(characters) {
+  const container = document.querySelector('.container');
+  container.innerHTML = "";
+  characters.map((element) => {
+      const characterItem = document.createElement("div");
+      characterItem.className = "char";
+      characterItem.innerHTML = `
+      <div class="characterItem">
+        <p>Name: <strong>${element.name}</strong></p>
+        <p>Birhday: <strong>${element.birth_year}</strong></p>
+        <p>Gender: <strong>${element.gender}</strong></p>
+      </div>`;
+       container.append(characterItem);
+  });
 }
+
+getCharachters().then(showCharacters)
