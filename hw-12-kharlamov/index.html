@@ -10,22 +10,28 @@
     .characterItem{
       border: 1px solid #000;
       margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .characterItem span {
+      padding: 10px;
     }
     .container{
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      flex-wrap: wrap;
+      flex-direction: column;
+
     }
   </style>
 </head>
 <body>
-    <!-- <button type="button" id="prev">Prev</button>
-    <button type="button" id="next">Next</button> -->
+  <!-- <button type="button" id="prev">Prev</button>
+  <button type="button" id="next">Next</button> --> 
+  <button id="showCharacters" type="button">showCharacters</button>
+  <button id="showPlanets" type="button">showCharacters</button>
 
   <div class="container"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
