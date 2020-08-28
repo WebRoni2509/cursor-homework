@@ -7,7 +7,7 @@ const showPlanetsBtn = document.querySelector('#showPlanetsBtn');
 
 //get characters list
 const getCharachters = (url) => {
-  return axios.get(`${BASE_URL}films/5`).then(
+  return axios.get(`${BASE_URL}films/5/`).then(
     (res) => {
       return res.data.characters
     }
