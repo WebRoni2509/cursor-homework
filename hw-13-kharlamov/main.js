@@ -1,4 +1,7 @@
 
+const generateIdBtn = document.querySelector('.generateId')
+const idResult = document.querySelector('#idResult')
+
 function* createIdGenerator(){
   let i = 1;
   while(true)
@@ -6,7 +9,6 @@ function* createIdGenerator(){
 }
 const idGenerator = createIdGenerator();
 
-// setInterval(() => {
-//   return console.log(idGenerator.next().value)
-// }, 1000); 
-
+generateIdBtn.addEventListener('click', () => {
+  return idResult.innerHTML = idGenerator.next().value
+})
