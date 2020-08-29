@@ -1,5 +1,5 @@
 
-const generateIdBtn = document.querySelector('.generateId')
+const generateIdBtn = document.querySelector('#generateId')
 const idResult = document.querySelector('#idResult')
 
 function* createIdGenerator(){
