@@ -1,14 +1,12 @@
 
-
-function* idGen(){
-  let index = 1;
+function* createIdGenerator(){
+  let i = 1;
   while(true)
-    yield index++;
+    yield i++;
 }
+const idGenerator = createIdGenerator();
 
-const counter = idGen();
-
-setInterval(() => {
-  return console.log(counter.next())
-}, 1000); 
+// setInterval(() => {
+//   return console.log(idGenerator.next().value)
+// }, 1000); 
 
